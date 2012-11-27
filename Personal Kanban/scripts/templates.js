@@ -1,5 +1,5 @@
 define(["jQuery", "kendo"], function ($, kendo) {
-    "use strict";
+"use strict";
 
     var _getText = function (selector) {
             return $(selector).text().trim();
