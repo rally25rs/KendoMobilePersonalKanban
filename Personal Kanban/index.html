@@ -4,8 +4,6 @@
         <title></title>
         <meta charset="utf-8" />
         <script src="cordova.js"></script>
-        <script src="kendo/js/jquery.min.js"></script>
-        <script src="kendo/js/kendo.mobile.min.js"></script>
 
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
         <link href="styles/main.css" rel="stylesheet" />
@@ -14,11 +12,11 @@
 
         <!-- Views -->
 
-        <div data-role="view" id="tasks-view" data-init="app.tasksView.init">
+        <div data-role="view" id="tasks-view" data-init="app.tasksView.init" data-model="app.tasksView.viewModel">
             <header data-role="header">
                 <div id="tasks-view-statuses"></div>
             </header>
-            <ul id="tasks-view-tasks"></ul>
+            <ul id="tasks-view-tasks" data-role="listview" data-bind="source: selectedStatus.tasks" data-template="task-template"></ul>
         </div>
 
 
@@ -32,7 +30,7 @@
         </script>
 
         <script id="task-template" type="text/x-kendo-template">
-            #=name#
+            <span data-bind="text: name"></span>
         </script>
 
         <script src="scripts/require.js" data-main="scripts/main.js"></script>

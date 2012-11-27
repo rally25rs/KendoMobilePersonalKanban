@@ -10,7 +10,6 @@ define(["jQuery", "kendo"], function ($, kendo) {
         };
 
     return {
-        status: _getFunc("#status-template"),
-        task: _getText("#task-template")
+        status: _getFunc("#status-template")
     }
 });
